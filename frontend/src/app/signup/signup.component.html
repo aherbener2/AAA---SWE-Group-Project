@@ -1,0 +1,102 @@
+<article role="login">
+    <h3 class="text-center">Sign Up</h3>
+    <form 
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSignupSubmit()"
+        #f="ngForm"
+        novalidate
+        class="signup"
+    >
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control" 
+                name="firstName" 
+                [(ngModel)]="form.firstName" 
+                required 
+                minLength="2" 
+                maxlength="40" 
+                #firstName="ngModel" 
+                placeholder="First Name"
+            >
+            <div class="alert-danger" *ngIf="f.submitted && firstName.invalid">
+                <div *ngIf="firstName.errors.required">First name is required</div>
+                <div *ngIf="firstName.errors.minLength">First name must be atleast 2 characters</div>
+                <div *ngIf="firstName.errors.maxlength">First name must be atmost 40 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control" 
+                name="lastName" 
+                [(ngModel)]="form.lastName" 
+                required 
+                minLength="2" 
+                maxlength="40" 
+                #lastName="ngModel" 
+                placeholder="Last Name"
+            >
+        </div>
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control" 
+                name="pantherID" 
+                [(ngModel)]="form.pantherID" 
+                required 
+                minLength="9" 
+                maxlength="9" 
+                #pantherID="ngModel" 
+                placeholder="PantherID"
+            >
+            <div class="alert-danger" *ngIf="f.submitted && pantherID.invalid">
+                <div *ngIf="pantherID.errors.required">PantherID is required</div>
+                <div *ngIf="pantherID.errors.minLength && pantherID.errors.maxlength">PantherID must be 9 characters long</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input 
+                type="email" 
+                class="form-control" 
+                name="email" 
+                [(ngModel)]="form.email" 
+                required 
+                email
+                #email="ngModel" 
+                placeholder="campusID@student.gsu.edu"
+            >
+            <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">Email must be a valid GSU student email</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input 
+                type="password" 
+                class="form-control" 
+                name="password" 
+                [(ngModel)]="form.password" 
+                required 
+                minLength="6"
+                #password="ngModel" 
+                placeholder="Password"
+            >
+            <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minLength">Password must be 6 characters long</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success btn-block" value="Sign Up">
+        </div>
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignupFailed">
+            Sign Up failed!<br> {{ errorMessage}}
+        </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+    </div>
+</article>
