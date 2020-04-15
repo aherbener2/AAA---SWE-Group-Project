@@ -1,3 +1,8 @@
+/*
+  binds signup form data to AuthService.signup() which 
+  returns an Observable object
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
