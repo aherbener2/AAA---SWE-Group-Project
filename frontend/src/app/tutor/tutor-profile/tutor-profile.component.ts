@@ -12,7 +12,7 @@ export class TutorProfileComponent implements OnInit {
   constructor(private tutorService: TutorService) { }
 
   ngOnInit(): void {
-    this.tutorService.getAdminBoard().subscribe(
+    this.tutorService.getUserBoard().subscribe(
       data => {
         this.content = data;
       },
