@@ -2,12 +2,13 @@ package edu.gsu.swe.aaaapp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tutor")
 public class Tutor {
-	private String Pantherid;
+	private int Pantherid;
 //	private String username;
 	private String password;
 	private String firstName;
@@ -15,7 +16,7 @@ public class Tutor {
 	private String email;
 //	private String courses;
 
-	public Tutor(String password, String firstName, String lastName, String email, String pantherid) {
+	public Tutor(String password, String firstName, String lastName, String email, int pantherid) {
 //	this.username = username;
 		this.password = password;
 		this.email = email;
@@ -24,7 +25,7 @@ public class Tutor {
 		this.Pantherid = pantherid;
 	}
 
-	public void setid(String id) {
+	public void setid(int id) {
 		this.Pantherid = id;
 	}
 
@@ -37,8 +38,9 @@ public class Tutor {
 		this.lastName = lastName;
 	}
 
+	@Id
 	@Column(name = "pantherId", nullable = false)
-	public String getid() {
+	public int getid() {
 		return Pantherid;
 	}
 
