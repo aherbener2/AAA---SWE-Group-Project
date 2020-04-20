@@ -28,13 +28,13 @@ public class TutorController {
     @Autowired
     private TutorRepository tutorRepository;
 
-    @GetMapping("/tutor")
+    @GetMapping("/tutors")
     public List<Tutor> getAllTutors() {
         return tutorRepository.findAll();
     }
 
-    @GetMapping("/tutor/{pantherid}")
-    public ResponseEntity<Tutor> getTutorById(@PathVariable(value = "pantherid") String pantherid)
+    @GetMapping("/tutors/{id}")
+    public ResponseEntity<Tutor> getTutorById(@PathVariable(value = "id") String pantherid)
         throws RelationNotFoundException {
         Tutor tutor = TutorRepository.findById(pantherid);
 
@@ -46,8 +46,8 @@ public class TutorController {
         return tutorRepository.save(tutor);
     }
 
-    @PutMapping("/tutors/{pantherid}")
-    public ResponseEntity<Tutor> updateTutor(@PathVariable(value = "pantherid") String tutorId,
+    @PutMapping("/tutors/{id}")
+    public ResponseEntity<Tutor> updateTutor(@PathVariable(value = "id") String tutorId,
          @Valid @RequestBody Tutor tutorDetails) throws RelationNotFoundException {
         Tutor tutor = TutorRepository.findById(tutorId);
 
@@ -59,8 +59,8 @@ public class TutorController {
         return ResponseEntity.ok(updatedTutor);
     }
 
-    @DeleteMapping("/tutors/{pantherid}")
-    public Map<String, Boolean> deleteTutor(@PathVariable(value = "pantherid") String tutorId)
+    @DeleteMapping("/tutors/{id}")
+    public Map<String, Boolean> deleteTutor(@PathVariable(value = "id") String tutorId)
          throws RelationNotFoundException {
         Tutor tutor = TutorRepository.findById(tutorId);
 
