@@ -1,0 +1,10 @@
+.intro-heading {
+    background-image: url("/assets/images/blue-bg.png");
+    height: 40vh;
+}
+
+.btn-style {
+    margin: 0 auto;
+    text-align: right;
+    width: 50%;
+}

@@ -1,0 +1,41 @@
+
+    <div class="login-signup w-50 mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 nav-tab-holder">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="active col-sm-6 text-center" >
+                        <a href="#signin" aria-controls="signin" data-toggle="pill" >Sign In</a>
+                    </li>
+                    <li class="col-sm-6 text-center" >
+                        <a href="#signup" aria-controls="signup" data-toggle="pill" >Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       
+        <div class="tab-content">
+            <!--Sign in Tab-->
+            <div class="tab-pane active" id="signin">
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 mobile-pull">
+                        <app-signin></app-signin>
+                    </div>
+                </div>
+            </div> <!--end of sign in tab-->
+
+
+            <!--Sign Up Tab-->
+            <div class="tab-pane" id="signup">
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 mobile-pull">
+                       <app-signup></app-signup>
+                    </div>
+                </div>
+            </div> <!--end of sign up tab panel-->
+
+        </div> <!--End of tab content-->
+        
+    </div> <!--login-signup-->
+
+

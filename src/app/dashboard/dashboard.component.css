@@ -1,0 +1,10 @@
+.intro-heading {
+    background-image: url("/assets/images/cs-tutoring-image.jpg");
+    height: 80vh;
+}
+
+.big-text {
+    font-size: 52 px;
+    margin: 20px 0;
+    color: rgb(3, 3, 216);
+}

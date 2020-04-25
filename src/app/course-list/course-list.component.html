@@ -1,0 +1,24 @@
+<div class=" container-fluid row pt-3 ">
+    <div class="col-3">
+        <div class="d-block">
+            <h4 class="d-inline">Courses</h4>
+        </div>
+        <br>
+        <div class="list-group shadow">
+            <div class="list-group-item list-group-item-action">
+                    <h6 class="d-inline"><a href="courses/" class="active">All Courses</a></h6>
+            </div>
+            <div class="list-group-item list-group-item-action" *ngFor="let course of courses">
+                <div class="d-block">
+                    <h6 class="d-inline"><a href="courses/{{course.id}}" class="list-group-item-action">{{course.name}}</a></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+         <br><br>
+         <div class="main-content">
+             <router-outlet></router-outlet>
+         </div>
+    </div>
+</div>

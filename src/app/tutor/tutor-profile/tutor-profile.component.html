@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="jumbotron intro-heading text-light">
+        <h1 class="">Welcome to your Profile!</h1>
+        <!--<p class="lead">{{ content }}</p>-->
+    </div>
+
+    <form 
+        [formGroup]="tutorUpdateForm"
+        #updateTutorValues
+        (ngSubmit)="updateTutorValues(updateTutorValues)"
+    >
+        <div *ngFor="let tutor of tutorList">
+            <div [hidden]="isUpdated">
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" formControlName="firstName" [(ngModel)]="tutor.firstName" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control" formControlName="lastName" [(ngModel)]="tutor.lastName" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="pantherid">PantherID</label>
+                    <input type="text" class="form-control" formControlName="pantherId" [(ngModel)]="tutor.pantherId" id="pantherId" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" formControlName="email" [(ngModel)]="tutor.email"  id="exampleFormControlInput1" disabled>
+                </div>
+                <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Update Password</label>
+                        <div class="col-sm-10">
+                        <input type="password" class="form-control" formControlName="password" [(ngModel)]="tutor.password" id="inputPassword">
+                        </div>
+                    </div>
+                <div class="form-group">
+                <label for="exampleFormControlSelect1">Courses</label>
+                <select multiple class="form-control" id="exampleFormControlSelect1">
+                    <option *ngFor="let course of courses">{{course.name}}</option>
+                </select>
+                </div>
+                <label for="schedule">Schedule</label>
+                <br>
+                <div class="form-check-inline">
+                    <input checked type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Monday</label>
+                </div>
+                <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Tuesday</label>
+                    </div>
+                    <div class="form-check-inline">
+                            <input checked type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Wednesday</label>
+                        </div>
+                        <div class="form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Thursday</label>
+                            </div>
+                            <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Friday</label>
+                                </div>
+                <br>
+                <div class="form-check-inline">
+                        <input checked type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">10am</label>
+                    </div>
+                    <div class="form-check-inline">
+                            <input checked type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">11am</label>
+                        </div>
+                        <div class="form-check-inline">
+                                <input checked type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">12pm</label>
+                            </div>
+                            <div class="form-check-inline">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">1pm</label>
+                                </div>
+                                <div class="form-check-inline">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">2pm</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">3pm</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">4pm</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                    <label class="form-check-label" for="exampleCheck1">5pm</label>
+                                                </div>
+                <br><br>
+                <button type="submit" [hidden]="isUpdated" class="btn btn-primary bt-style">Update</button>
+                <div [hidden]="!isUpdated">
+                    <h4>Tutor Details Updated!</h4>
+                </div>
+            </div>
+        </div>
+            
+          </form>
+</div>
